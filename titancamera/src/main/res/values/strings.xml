@@ -1,0 +1,11 @@
+<resources>
+    <string name="image_save_error">Cannot save picture!</string>
+    <string name="image_capture_error">Cannot take picture!</string>
+    <string name="camera_loading_error">Cannot start Camera!</string>
+    <string name="front_camera_not_supported">Your device does not support front camera</string>
+    <string name="provide_permission_message">Please provide permissions from settings!</string>
+    <string name="switch_camera_error">Cannot switch camera</string>
+    <string name="some_error_occurred">Some error occurred!</string>
+    <string name="camera_in_use">Camera is in use by another application</string>
+    <string name="please_select_document">Please select document</string>
+</resources>
