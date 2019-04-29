@@ -1,4 +1,4 @@
-package com.example.vendvinodkumar.customcamera;
+package tester;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -7,6 +7,8 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
+
+import com.example.vendvinodkumar.customcamera.R;
 
 import net.titan.camera.cameras.CameraProperties;
 import net.titan.camera.interfaces.CaptureResult;
