@@ -166,18 +166,18 @@ new CameraRequestBuilder()
 
 
 
-#### Version
+### Version
 
-1.0
+**1.0**
 
 
 
-#### Libraries used
+### Libraries used
 
 * [PhotoView](https://github.com/chrisbanes/PhotoView) - To display the captured image with sliding feature.
 
 
 
 
-#### Author
+### Author
 **Vinod Kumar**
