@@ -5,6 +5,7 @@ import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.ImageFormat;
 import android.graphics.Point;
+import android.graphics.Rect;
 import android.graphics.SurfaceTexture;
 import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraCaptureSession;
@@ -188,7 +189,10 @@ public class Camera2FragmentPresenterImpl implements Camera2FragmentPresenter,
                         maxPreviewHeight,
                         fullScreenSize);
             } else
-                previewSize = new Size(width, height);
+                previewSize = new Size(maxPreviewWidth, maxPreviewHeight);
+
+            Rect activeArray = cameraCharacteristics.get(CameraCharacteristics.SENSOR_INFO_ACTIVE_ARRAY_SIZE);
+            this.checkActiveArraySize(activeArray);
 
             if (view.getWindowOrientation() == Configuration.ORIENTATION_LANDSCAPE) {
                 this.view.setTextureViewAspectRatio(previewSize.getWidth(), previewSize.getHeight());
@@ -197,7 +201,7 @@ public class Camera2FragmentPresenterImpl implements Camera2FragmentPresenter,
             }
 
 
-        } catch (CameraAccessException e) {
+        } catch (Exception e) {
             view.showToast(R.string.camera_loading_error);
             view.finishActivity();
         }
@@ -352,6 +356,25 @@ public class Camera2FragmentPresenterImpl implements Camera2FragmentPresenter,
             }
         }
         return null;
+    }
+
+    private void checkActiveArraySize(@Nullable Rect activeArraySize) {
+        if (activeArraySize != null) {
+            Rect activeArraySizeOnly = new Rect(
+                    /*left*/0,
+                    /*top*/0,
+                    /*right*/activeArraySize.width(),
+                    /*bottom*/activeArraySize.height());
+
+
+            if (previewSize.getWidth() > activeArraySizeOnly.width()) {
+                previewSize = new Size(activeArraySize.width(), previewSize.getHeight());
+            }
+
+            if (previewSize.getHeight() > activeArraySizeOnly.height()) {
+                previewSize = new Size(previewSize.getWidth(), activeArraySize.height());
+            }
+        }
     }
 
     @Nullable
