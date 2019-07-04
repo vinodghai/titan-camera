@@ -10,6 +10,14 @@ This project contains **titan-camera** library and a tester app. To use the app 
 
 
 
+### Demo
+| Camera Preview      | Picture Taken      | 
+|------------|-------------| 
+| ![Camera Preview](https://github.com/vinodghai/titan-camera/blob/master/1_n.png?raw=true "Camera Preview") | ![Picture Taken](https://github.com/vinodghai/titan-camera/blob/master/2_n.png?raw=true "Picture Taken") |
+  
+
+
+
 ### Camera API
 * [Camera](https://developer.android.com/guide/topics/media/camera) - API used on devices running below Lollipop (SDK 21)
 * [Camera2](https://developer.android.com/reference/android/hardware/camera2/package-summary.html) - API used on and above Lollipop (SDK 21)
