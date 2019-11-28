@@ -93,62 +93,6 @@ new CameraRequestBuilder()
 **Note: You can have the result image file in *CaptureResult (Callback)* or *onActivityResult*. You can receive result in Activity's *onActivityResult* as well as Fragment's *OnActivityResult*. You should consider getting results in *onActivityResult* if you want to do a FragmentTransaction after receving File.**
 
 
-
-### Want to customize?
-
-1. Create a fragment class and extend to Camera1FragmentImpl or Camera2FragmentImpl and override the behaviour you want. Example.
-
-```
-/*
-  You can override many of the exposed methods in your custom sub-class and change the behaviour accordinglly. This example includes       overriding of Camera1FragmentImpl, in a similar manner you can sub-class Camera2FragmentImpl to change the behaviour of camera2 API.
-*/
-
-
-
- public class CustomCameraFragment extends Camera1FragmentImpl {
-
-        /*
-          If you want to change the Done button. Override this methond and return your customized button. It returns a view so you are             not restricted to Button class only and can completely customize your view as you want.
-        */
-
-        @Override
-        protected View getButtonDone() {
-            return super.getButtonDone();
-        }
-
-
-        /*
-          If you want to change the Capture button. Override this methond and return your customized button. It returns a view so you             are not restricted to Button class only and can completely customize your view as you want.
-        */
-        
-        @Override
-        protected View getButtonCapture() {
-            return super.getButtonCapture();
-        }
-        
-        
-         /*
-          This method is invoked when user presses the done button after taking picture. You can certainlly customize the behaviour as             per your needs.
-        */
-
-        @Override
-        protected void onCompleted() {
-            super.onCompleted();
-        }
-
-       /*
-          This method is invoked when user presses the capture button. You can certainlly customize the behaviour as per your needs.
-        */
-        
-        @Override
-        protected void onCapture() {
-            super.onCapture();
-        }
-    }
-```
-
-
-
 ### CameraRequestBuilder
 
 | Method       | Descritpion |
